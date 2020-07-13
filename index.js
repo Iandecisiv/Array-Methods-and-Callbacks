@@ -138,11 +138,40 @@ getAverageGoals();
 Hint: Investigate your data to find "team initials"!
 Hint: use `.reduce` */
 
-function getCountryWins(/* code here */) {
+function getCountryWins(data, teamInitials) {
 
-    /* code here */
+    let worldCupWins = 0;
+
+    let teamMatches = data.filter(function(match) {
+    return match["Home Team Initials"] == teamInitials || match["Away Team Initials"] == teamInitials;
+    })
+
+    for(let match of teamMatches){
+       if(match["Stadium"].includes("World Cup"))
+       {
+           if(match["Home Team Initials"] == teamInitials)
+           {
+                if(homeTeamWins(match)){
+                    worldCupWins++;
+                }
+           }
+           else{
+               if(!homeTeamWins(match)){
+                   worldCupWins++;
+               }
+           }
+       } 
+    }
+
+    return worldCupWins;
 
 };
+
+function homeTeamWins(match){
+    return match["Home Team Goals"] > match["Away Team Goals"];
+}
+
+console.log(getCountryWins(fifaData, "GER"));
 
 getCountryWins();
 
