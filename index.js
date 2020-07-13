@@ -198,3 +198,24 @@ function badDefense(/* code here */) {
 badDefense();
 
 /* If you still have time, use the space below to work on any stretch goals of your chosing as listed in the README file. */
+
+
+
+// let result = fifaData.filter(function(fifa) {
+//     console.log(fifa["Year"]);
+//     return fifa["Year"] == 2014  && fifa["Stage"] == "Final"});
+// console.log(result);
+// console.log(result[0]["Home Team Initials"]);
+// console.log(result[0]["Away Team Initials"]);
+// console.log(result[0]["Home Team Goals"]);
+// console.log(result[0]["Away Team Goals"]);
+
+// function getFinals(data) {
+
+//     return result = fifaData.filter(function(fifa) {
+
+//         return fifa["Stage"] == "Final"});
+
+// };
+
+// console.log(getFinals(fifaData));
